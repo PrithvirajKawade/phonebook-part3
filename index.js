@@ -62,8 +62,6 @@ app.delete('/api/persons/:id', (request, response) => {
   })
 
 app.post('/api/persons', (request, response) => {
-   
-    
     const body = request.body
     const nameCheck = persons.every(person=> person.name !== body.name)
     console.log("namecheck", nameCheck)
@@ -106,7 +104,7 @@ app.post('/api/persons', (request, response) => {
     ].join(' ')
   }))
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || '8080'
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
